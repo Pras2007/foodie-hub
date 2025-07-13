@@ -599,8 +599,11 @@ const StudentDashboard: React.FC = () => {
                   <User className="w-8 h-8 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white">{user?.user_metadata?.full_name || 'Student'}</h3>
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white">{user?.full_name || 'Student'}</h3>
                   <p className="text-gray-600 dark:text-gray-300">{user?.email}</p>
+                  {user?.registration_number && (
+                    <p className="text-sm text-gray-500 dark:text-gray-400">Reg: {user.registration_number}</p>
+                  )}
                 </div>
               </div>
 
@@ -611,7 +614,7 @@ const StudentDashboard: React.FC = () => {
                   </label>
                   <input
                     type="text"
-                    value={user?.user_metadata?.full_name || ''}
+                    value={user?.full_name || ''}
                     readOnly
                     className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white"
                   />
@@ -644,7 +647,29 @@ const StudentDashboard: React.FC = () => {
                   </label>
                   <input
                     type="text"
-                    value={user?.user_metadata?.registration_number || 'Not provided'}
+                    value={user?.registration_number || 'Not provided'}
+                    readOnly
+                    className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                    Mobile Number
+                  </label>
+                  <input
+                    type="text"
+                    value={user?.mobile_number || 'Not provided'}
+                    readOnly
+                    className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                    Account Created
+                  </label>
+                  <input
+                    type="text"
+                    value={user?.created_at ? new Date(user.created_at).toLocaleDateString() : 'Not available'}
                     readOnly
                     className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white"
                   />
