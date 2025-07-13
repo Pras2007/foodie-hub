@@ -41,14 +41,6 @@ const Header: React.FC<HeaderProps> = ({ title, showCart = false, cartCount = 0,
                 <div className="text-xs text-gray-600 dark:text-gray-400 font-medium">Premium Food Ordering</div>
               </div>
             </div>
-            <div 
-              className="ml-8 hidden md:block"
-              style={{
-                transform: `translateY(${scrollY * 0.02}px)`,
-              }}
-            >
-              <h1 className="text-lg font-medium text-gray-800 dark:text-gray-200">{title}</h1>
-            </div>
           </div>
 
           <div className="flex items-center space-x-4">

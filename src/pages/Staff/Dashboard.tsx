@@ -484,14 +484,14 @@ const StaffDashboard: React.FC = () => {
                       <button
                         onClick={() => updateOrderStatus(order.id, 'processing')}
                         disabled={order.status !== 'pending' || isOrderUpdating(order.id, 'processing')}
-                        className="px-4 py-2 modern-button text-white rounded-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 text-sm"
+                        className="px-4 py-2 modern-button text-black dark:text-white rounded-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 text-sm"
                       >
                         {isOrderUpdating(order.id, 'processing') ? 'Updating...' : 'Start Processing'}
                       </button>
                       <button
                         onClick={() => updateOrderStatus(order.id, 'ready')}
                         disabled={order.status !== 'processing' || isOrderUpdating(order.id, 'ready')}
-                        className="px-4 py-2 text-white rounded-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 text-sm"
+                        className="px-4 py-2 text-black dark:text-white rounded-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 text-sm"
                         style={{ 
                           background: 'linear-gradient(135deg, rgba(34, 197, 94, 0.9) 0%, rgba(16, 185, 129, 0.9) 100%)',
                           boxShadow: '0 0 20px rgba(34, 197, 94, 0.4)' 
@@ -502,7 +502,7 @@ const StaffDashboard: React.FC = () => {
                       <button
                         onClick={() => updateOrderStatus(order.id, 'completed')}
                         disabled={order.status !== 'ready' || isOrderUpdating(order.id, 'completed')}
-                        className="px-4 py-2 glass-morphism hover:bg-white/10 text-white rounded-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 text-sm border border-white/20"
+                        className="px-4 py-2 glass-morphism hover:bg-white/10 text-black dark:text-white rounded-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 text-sm border border-white/20"
                       >
                         {isOrderUpdating(order.id, 'completed') ? 'Updating...' : 'Complete'}
                       </button>
